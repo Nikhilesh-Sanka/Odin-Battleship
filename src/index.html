@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Battle Ship</title>
+  </head>
+  <body>
+    <div id="player-form">
+      <form method="post" action="" id="player-one-form" novalidate>
+        <label for="player-one-selection">Player One</label>
+        <select id="player-one-selection">
+          <option value="human">Human</option>
+          <option value="computer">Computer</option>
+        </select>
+        <label for="player-one-name">Enter Player One Name</label>
+        <input id="player-one-name" type="text" required />
+        <label for="player-two-selection">Player Two</label>
+        <select id="player-two-selection">
+          <option value="human">Human</option>
+          <option value="computer">Computer</option>
+        </select>
+        <label for="player-two-name">Enter Player Two Name</label>
+        <input id="player-two-name" type="text" required />
+        <button>Start Game</button>
+      </form>
+      <p id="error-box"></p>
+    </div>
+  </body>
+</html>
