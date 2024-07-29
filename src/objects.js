@@ -33,7 +33,12 @@ class GameBoard {
   }
   receiveAttack(coord) {
     for (let ship of this.ships) {
-      if (ship.coordinates.some((coordinates) => (coord = coordinates))) {
+      if (
+        ship.coordinates.some(
+          (coordinates) =>
+            coord[0] === coordinates[0] && coord[1] === coordinates[1]
+        )
+      ) {
         ship.hit();
         this.hitCoordinates.push(coord);
         if (ship.isSunk()) {
@@ -41,20 +46,23 @@ class GameBoard {
             (aliveShip) => aliveShip.name !== ship.name
           );
           this.sunkenShips.push(ship);
+          return ["shipSunk", ship];
         }
-        return;
+        return ["hit"];
       }
     }
     this.missedHits.push(coord);
+    return ["missed-hit"];
   }
   isGameOver() {
     return this.ships.length === 0;
   }
 }
 
-class Player {
-  constructor(name, coord1, coord2, coord3, coord4, coord5) {
+export class Player {
+  constructor(name, type, coord1, coord2, coord3, coord4, coord5) {
     this.name = name;
-    this.gameBoard = new GameBoard(coord1, coord2, coord3, coord4, coord5);
+    this.type = type;
+    this.gameBoard = new GameBoard(coord5, coord4, coord3, coord2, coord1);
   }
 }

@@ -41,3 +41,73 @@ form input {
   margin: 10px auto;
   border-radius: 5px;
 }
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+#game-board {
+  width: 422px;
+  height: 422px;
+  background-color: black;
+  display: grid;
+  padding: 2px;
+  gap: 2px;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  margin: 50px auto;
+}
+.game-cell {
+  height: 40px;
+  width: 40px;
+  background-color: white;
+}
+.green {
+  background-color: lightgreen;
+}
+.red {
+  background-color: red;
+}
+.selected {
+  background-color: green;
+}
+#player-instructions {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 40px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+#player-board {
+  height: 40px;
+  width: 120px;
+  background-color: black;
+  color: white;
+  display: block;
+  margin: 0 auto;
+}
+.sunk-ship {
+  background-color: #ff4746;
+}
+.missed-hit div,
+.hit div {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+.missed-hit,
+.hit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.missed-hit div {
+  background-color: black;
+}
+.hit div {
+  background-color: red;
+}
